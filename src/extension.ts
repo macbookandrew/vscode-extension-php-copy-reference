@@ -78,7 +78,7 @@ export function activate(context: vscode.ExtensionContext) {
 						}
 						ref += symbol.name;
 				}
-			}else if(symbol.range.contains(selectedSybmol.selectionRange.start) && symbol.children.length > 0){
+			}else if(symbol.range.contains(selectedSybmol.range.start) && symbol.children.length > 0){
 				switch(symbol.kind){
 					case vscode.SymbolKind.Class:
 					case vscode.SymbolKind.Enum:
