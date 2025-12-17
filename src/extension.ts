@@ -63,10 +63,12 @@ export function activate(context: vscode.ExtensionContext) {
 			}else if(symbol.selectionRange.isEqual(selectedSybmol.selectionRange)){
 				switch(symbol.kind){
 					case vscode.SymbolKind.Class:
+					case vscode.SymbolKind.Enum:
 						ref += '\\' + symbol.name;
 						break;
 					case vscode.SymbolKind.Property:
 					case vscode.SymbolKind.Constant:
+					case vscode.SymbolKind.EnumMember:
 					case vscode.SymbolKind.Constructor:
 					case vscode.SymbolKind.Function:
 					case vscode.SymbolKind.Method:
@@ -79,6 +81,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}else if(symbol.range.contains(selectedSybmol.selectionRange.start) && symbol.children.length > 0){
 				switch(symbol.kind){
 					case vscode.SymbolKind.Class:
+					case vscode.SymbolKind.Enum:
 						ref += '\\' + symbol.name;
 						break;
 				}
